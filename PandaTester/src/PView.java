@@ -20,10 +20,7 @@ public class PView extends PVExistence {
 
 	public PView(String appName) {
 		super(appName);		
-		super.setSize(500, 800);
-		
-		
-		
+		super.setSize(500, 500);		
 	}
 
 	@Override
@@ -32,20 +29,26 @@ public class PView extends PVExistence {
 		actives = new ArrayList<PVActive>();
 		
 		PVGraphical img_1 = new PVGraphical();
+		PVGraphical img_2 = new PVGraphical();
 		BufferedImage img_1_img = null;
-		
+		BufferedImage img_2_img = null;
 		try {
 			img_1_img = ImageIO.read(new File("panda1.jpg"));
+			img_2_img = ImageIO.read(new File("panda1.jpg"));
+			System.out.println("Yes pic");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("no pic");
 		}
 		
 		img_1.setImg(img_1_img);
+		img_2.setImg(img_2_img);
 		
-		img_1.setCoordinate(20, 20);
-			
+		img_1.setCoordinate(80, 80);
+		
 		actives.add(img_1);
+		actives.add(img_2);
+		
 		return actives;
 		
 	}
@@ -58,14 +61,12 @@ public class PView extends PVExistence {
 		BufferedImage img = null;
 		try {
 			img = ImageIO.read(new File("background1.png"));
-			System.out.println("Yes pic");
+			System.out.println("Yes bg");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("no pic");
 		}
-		
-		System.out.print(" oh hai ");
-		
+				
 		bkg.setImage(img);
 		return bkg;
 	}
