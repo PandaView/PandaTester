@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 import PVLib.PVActive;
 import PVLib.PVBackground;
+import PVLib.PVButton;
 import PVLib.PVCoordinate;
 import PVLib.PVExistence;
 import PVLib.PVGraphical;
@@ -29,7 +30,6 @@ public class PView extends PVExistence {
 		actives = new ArrayList<PVActive>();
 		
 		PVGraphical img_1 = new PVGraphical();
-		PVGraphical img_2 = new PVGraphical();
 		BufferedImage img_1_img = null;
 		BufferedImage img_2_img = null;
 		try {
@@ -42,12 +42,13 @@ public class PView extends PVExistence {
 		}
 		
 		img_1.setImg(img_1_img);
-		img_2.setImg(img_2_img);
+		PVGraphical img_2 = new PVButton( img_2_img, "text", new PVCoordinate( 10, 10) );
 		
 		img_1.setCoordinate(80, 80);
 		
-		actives.add(img_1);
 		actives.add(img_2);
+		//actives.add(img_1);
+		
 		
 		return actives;
 		
