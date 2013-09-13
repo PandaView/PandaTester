@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -42,8 +43,9 @@ public class PView extends PVExistence {
 		}
 		
 		img_1.setImg(img_1_img);
-		PVGraphical img_2 = new PVButton( img_2_img, "text", new PVCoordinate( 10, 10) );
-		
+		PVButton img_2 = new PVButton( img_2_img, "text", new PVCoordinate( 75, 20 ), new PVCoordinate( 10, 10) );
+		img_2.setTextColor( Color.red );
+		//img_2.enableBackgroundResize();
 		img_1.setCoordinate(80, 80);
 		
 		actives.add(img_2);
